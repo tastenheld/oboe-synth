@@ -1,0 +1,102 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" class="page">
+    <ActionBar class="action-bar" height="{{barHeight}}">
+        <Label class="action-bar-title" text="Oboe - Synthesizer [Settings]">
+        </Label>
+        <ActionItem android.systemIcon="ic_menu_revert" (tap)="goBack()">
+        </ActionItem>
+        <ActionItem android.systemIcon="ic_menu_save" (tap)="save()">
+        </ActionItem>
+    </ActionBar>
+    <ScrollView class="scroll-view">
+        <StackLayout class="form">
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <Label class="h3" text="Keyboard Settings"></Label>
+            <GridLayout columns="*,*" width="100%">
+                <StackLayout row="0" col="0" verticalAlignment="center">
+                    <Label text="First White Key {{keyboard.firstKey}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="firstKey" minValue="1" maxValue="88"
+                        class="input-slider"></Slider>
+                </StackLayout>
+                <StackLayout row="0" col="1" verticalAlignment="center">
+                    <Label text="Last White Key {{keyboard.lastKey}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="lastKey" minValue="1" maxValue="88"
+                        class="input-slider"></Slider>
+                </StackLayout>
+            </GridLayout>
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <StackLayout class="hr-light"></StackLayout>
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <Label class="h3" text="Oscillator Settings"></Label>
+            <GridLayout columns="*,*" rows="auto, auto" width="100%">
+                <StackLayout row="0" col="0" verticalAlignment="center">
+                    <Label text="Sine Amplitude {{oscillator.sineAmp}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="oscillator.sineAmp" minValue="-100"
+                        maxValue="100" class="input-slider"></Slider>
+                </StackLayout>
+                <StackLayout row="0" col="1" verticalAlignment="center">
+                    <Label text="Square Amplitude {{oscillator.squareAmp}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="oscillator.squareAmp" minValue="-100"
+                        maxValue="100" class="input-slider"></Slider>
+                </StackLayout>
+                <StackLayout row="1" col="0" verticalAlignment="center">
+                    <Label text="Saw Amplitude {{oscillator.sawAmp}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="oscillator.sawAmp" minValue="-100"
+                        maxValue="100" class="input-slider"></Slider>
+                </StackLayout>
+                <StackLayout row="1" col="1" verticalAlignment="center">
+                    <Label
+                        text="Triangle Amplitude {{oscillator.triangleAmp}}"
+                        class="input-label">
+                    </Label>
+                    <Slider [(ngModel)]="oscillator.triangleAmp"
+                        minValue="-100" maxValue="100" class="input-slider">
+                    </Slider>
+                </StackLayout>
+            </GridLayout>
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <StackLayout class="hr-light"></StackLayout>
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <Label class="h3" text="Sensor Settings"></Label>
+            <GridLayout columns="*,*" rows="auto, auto" width="100%">
+                <StackLayout row="0" col="0" verticalAlignment="center">
+                    <Label text="Keyboard Pan" class="input-label">
+                    </Label>
+                    <Button (tap)="keyPan=!keyPan"
+                        class="btn btn-primary btn-rounded-lg {{!keyPan?'btn-outline':''}}"
+                        text="{{keyPan?'On':'Off'}}"></Button>
+                </StackLayout>
+                <StackLayout row="0" col="1" verticalAlignment="center">
+                    <Label text="Amplitude Pan" class="input-label">
+                    </Label>
+                    <Button (tap)="ampPan=!ampPan"
+                        class="btn btn-primary btn-rounded-lg {{!ampPan?'btn-outline':''}}"
+                        text="{{ampPan?'On':'Off'}}"></Button>
+                </StackLayout>
+                <StackLayout row="1" col="0" verticalAlignment="center">
+                    <Label text="Keyboard Accelerator" class="input-label">
+                    </Label>
+                    <Button (tap)="keyAcc=!keyAcc"
+                        class="btn btn-primary btn-rounded-lg {{!keyAcc?'btn-outline':''}}"
+                        text="{{keyAcc?'On':'Off'}}"></Button>
+                </StackLayout>
+                <StackLayout row="1" col="1" verticalAlignment="center">
+                    <Label text="Amplitude Accelerator" class="input-label">
+                    </Label>
+                    <Button (tap)="ampAcc=!ampAcc"
+                        class="btn btn-primary btn-rounded-lg {{!ampAcc?'btn-outline':''}}"
+                        text="{{ampAcc?'On':'Off'}}"></Button>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

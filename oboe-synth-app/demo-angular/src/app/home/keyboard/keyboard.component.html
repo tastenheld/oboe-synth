@@ -1,0 +1,21 @@
+<GridLayout columns="*" rows="*" class="keyboard"
+    width="{{keyboardWidth}}" height="{{keyboardHeight}}">
+    <StackLayout col="0" row="1" width="{{keySpaceWidth}}"
+        height="{{keySpaceHeight}}" class="key-space" (pan)="onPan($event)">
+        <StackLayout orientation="horizontal" class="upper-space">
+            <Label *ngFor="let key of keys" id="{{key.index}}"
+                text="{{key.index}}"
+                class="{{ (key.isWhiteKey)?'white':'black' }}"
+                width="{{ (key.isWhiteKey)? key.variableWidth : key.halfWidth }}"
+                (touch)="onPressedKey($event)"
+                isPassThroughParentEnabled="false"></Label>
+        </StackLayout>
+        <StackLayout orientation="horizontal" class="bottom-space">
+            <Label *ngFor="let key of keys" id="{{key.index}}"
+                visibility="{{key.isWhiteKey?'visible':'collapsed'}}"
+                width="{{key.width}}" class="white"
+                (touch)="onPressedKey($event)"
+                isPassThroughParentEnabled="false"></Label>
+        </StackLayout>
+    </StackLayout>
+</GridLayout>

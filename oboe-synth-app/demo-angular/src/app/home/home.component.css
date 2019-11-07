@@ -1,0 +1,24 @@
+.container {
+    text-align: center;
+    background-color: rgb(73, 73, 73);
+}
+
+.controller {
+    text-align: center;
+    vertical-align: center;
+}
+
+.button {
+    background: linear-gradient(to bottom, #8a8a8a, #434343, #434343, #8a8a8a);
+    color: #d0d0d0;
+    width: 340;
+}
+
+.input-label {
+    color: rgb(228, 228, 228);
+    text-align: center;
+}
+
+.input-slider {
+    background-color: rgb(228, 228, 228);
+}

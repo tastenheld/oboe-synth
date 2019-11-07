@@ -1,0 +1,17 @@
+.form {
+    padding: 0 20 0 20;
+}
+
+.input-label {
+    color: rgb(228, 228, 228);
+    text-align: center;
+}
+
+.input-slider {
+    background-color: rgb(228, 228, 228);
+}
+
+.form > .h3 {
+    text-align: center;
+    text-decoration: underline;
+}

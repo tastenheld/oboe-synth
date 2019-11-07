@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" class="page">
+    <ActionBar class="action-bar" height="{{barHeight}}">
+        <Label class="action-bar-title" text="Oboe - Synthesizer [{{getOscName(oscNumber)}}]"></Label>
+        <ActionItem android.systemIcon="ic_menu_preferences"
+            (tap)="goToSettings()" class="action-item"></ActionItem>
+    </ActionBar>
+    <ScrollView class="scroll-view">
+        <StackLayout class="container">
+            <StackLayout class="space" height="{{space}}"></StackLayout>
+            <GridLayout class="contoller" width="{{controllerWidth}}"
+                height="{{controllerHeight}}" rows="*" columns="2*, 2.5*, 3*">
+                <Button
+                    class="btn btn-primary btn-rounded-lg {{(!isPowerOn)?'btn-outline':'btn-active'}}"
+                    row="0" col="0" text="Power" (tap)="switchPower()">
+                </Button>
+                <Button class="btn btn-primary btn-rounded-lg btn-active"
+                    row="0" col="1" text="Waveform" (tap)="switchOsc()">
+                </Button>
+                <StackLayout row="0" col="2" verticalAlignment="center">
+                    <Label class="input-label" text="Amplitude {{amplitude}}">
+                    </Label>
+                    <Slider [(ngModel)]="amplitude" class="input-slider"></Slider>
+                </StackLayout>
+            </GridLayout>
+            <StackLayout class="space" height="{{space}}">
+            </StackLayout>
+            <Keyboard></Keyboard>
+        </StackLayout>
+    </ScrollView>
+</Page>
